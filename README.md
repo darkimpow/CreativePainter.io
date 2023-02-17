@@ -5,8 +5,10 @@ CreativePainter.io is an innovative web application designed to generate images 
 * Tailwind Css
 * JavaScript
 * Responsively
+* Figma
+* WebStorm
 ### App Snippet
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/114354240/219757917-ac2d28ec-68b5-481e-921a-8808969a6fd3.png)
 
 ### App Demo
 *
