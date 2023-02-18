@@ -1,0 +1,3 @@
+### Create a image api
+GET https://api.openai.com/v1/images/generations
+
