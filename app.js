@@ -3,9 +3,9 @@ const placeHereEl = document.querySelector('#images');
 
 searchBoxEl.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-        const apiKey = "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";
+        const apiKey = "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";
         const prompt = event.target.value;
-        const n = 4;
+        const n = 3;
         const size = "512x512";
 
         fetch(`https://api.openai.com/v1/images/generations`, {
@@ -22,13 +22,14 @@ searchBoxEl.addEventListener('keypress', (event) => {
         })
             .then(response => response.json())
             .then(data => {
-                const images = data.data;
+                if (data && data.data && data.data.length > 0) {
+                    const images = data.data;
+                    const displayImages = images.slice(0, 3);
 
-                const displayImages = images.slice(0, 3);
+                    placeHereEl.innerHTML = '';
 
-                placeHereEl.innerHTML = '';
-
-                displayImages.forEach(image => displayImage(image));
+                    displayImages.forEach(image => displayImage(image));
+                }
             })
             .catch(err => {
                 console.log(err);
