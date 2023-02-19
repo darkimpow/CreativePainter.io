@@ -3,7 +3,7 @@ const placeHereEl = document.querySelector('#images');
 
 searchBoxEl.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-        const apiKey = "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";
+        const apiKey = "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";
         const prompt = event.target.value;
         const n = 3;
         const size = "512x512";
