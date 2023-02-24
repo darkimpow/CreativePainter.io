@@ -6,8 +6,10 @@ const placeHereEl = document.querySelector('#images');
 
 searchBoxEl.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
+        displayImage('https://media.giphy.com/media/l0HlIMvkBCH23wyUU/giphy.gif')
+
         const prompt = event.target.value;
-        const n = 3;
+        const n = 4;
         const size = "512x512";
 
         fetch(`https://api.openai.com/v1/images/generations`, {
@@ -40,6 +42,11 @@ searchBoxEl.addEventListener('keypress', (event) => {
 });
 
 function displayImage(image) {
+
+    placeHereEl.innerHTML = `
+        <img src=${image}> 
+        
+    `
     const div = document.createElement('div');
     div.classList.add('flex', 'p-6', 'rounded-lg');
 
