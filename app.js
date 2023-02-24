@@ -1,9 +1,10 @@
+
+import config from "./config.js";
 const searchBoxEl = document.querySelector('#search');
 const placeHereEl = document.querySelector('#images');
 
 searchBoxEl.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-        const apiKey = "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";
         const prompt = event.target.value;
         const n = 3;
         const size = "512x512";
@@ -12,7 +13,7 @@ searchBoxEl.addEventListener('keypress', (event) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${apiKey}`
+                "Authorization": `Bearer ${config.API_KEY}`
             },
             body: JSON.stringify({
                 prompt: prompt,
