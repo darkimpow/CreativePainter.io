@@ -1,5 +1,6 @@
 
 import config from "./config.js";
+
 const searchBoxEl = document.querySelector('#search');
 const placeHereEl = document.querySelector('#images');
 
