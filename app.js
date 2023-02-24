@@ -9,7 +9,7 @@ searchBoxEl.addEventListener('keypress', (event) => {
         displayImage('https://media.giphy.com/media/l0HlIMvkBCH23wyUU/giphy.gif')
 
         const prompt = event.target.value;
-        const n = 4;
+        const n = 2;
         const size = "512x512";
 
         fetch(`https://api.openai.com/v1/images/generations`, {
