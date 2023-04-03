@@ -1,19 +1,24 @@
 const searchBoxEl = document.querySelector('#search');
 const placeHereEl = document.querySelector('#images');
+import config from './config.js';
 
 searchBoxEl.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
-        const apiKey = "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";
-        const prompt = event.target.value;
+
+        const prompt = "";
         const n = 3;
         const size = "512x512";
 
         fetch(`https://api.openai.com/v1/images/generations`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${apiKey}`
+                'Content-Type': "application/json",
+                'Authorization': config.API_KEY
             },
+            // headers: {
+            //     'Content-Type': "application/json",
+            //     'Authorization': "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"
+            //     },
             body: JSON.stringify({
                 prompt: prompt,
                 n: n,
